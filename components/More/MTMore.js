@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Alert, ScrollView} from 'react-native';
-import CommonCell from './MTCommonCell';
+import CommonCell from './MTCommonMoreCell';
 
 const {width, height} = Dimensions.get('window');
 const IsIphoneX = (Platform.OS == 'ios' && width == 375 && height == 812);

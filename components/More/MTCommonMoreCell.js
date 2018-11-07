@@ -22,7 +22,7 @@ export default class CommonCell extends Component {
     return (
       <TouchableOpacity onPress={()=>{Alert.alert(this.props.title)}} activeOpacity={0.8}>
         <View style={styles.container}>
-          <Text style={{fontSize:16, marginLeft:10}}>{this.props.title}</Text>
+          <Text style={{fontSize:15, marginLeft:10}}>{this.props.title}</Text>
           {this.renderRightView()}
         </View>
       </TouchableOpacity>
