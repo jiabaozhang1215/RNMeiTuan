@@ -16,7 +16,7 @@ export default class Launch extends Component {
       this.props.navigator.replace({
         component: Main,
       });
-    }, 2000);
+    }, 1000);
   }
 }
 

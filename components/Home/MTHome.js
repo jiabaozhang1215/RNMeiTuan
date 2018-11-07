@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   navBarStyle: {
     backgroundColor: 'rgb(255, 96, 0)',
     height: (IsIphoneX ? 88 : 64),
-    paddingTop: (IsIphoneX ? 44 : 20), //让子控件在44的高度上垂直居中
+    paddingTop: (IsIphoneX ? 44 : 20),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
