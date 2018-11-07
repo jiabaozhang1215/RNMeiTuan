@@ -10,9 +10,9 @@ export default class CommonMineCell extends Component {
 	}
 
 	static defaultProps = {
-		icon : null,		//图标
-		title: '',			//标题
-		subtitle: '',		//副标题
+		icon : null,	//图标
+		title: '',		//标题
+		subtitle: '',	//副标题
 		isNew: false,	//是否显示“new”标签
 	}
 

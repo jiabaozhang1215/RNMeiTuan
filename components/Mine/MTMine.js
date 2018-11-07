@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
 import CommonCell from './MTCommonMineCell';
+import MineOrderCell from './MTMineOrderCell';
 
 export default class Mine extends Component {
   render() {
@@ -8,7 +9,14 @@ export default class Mine extends Component {
       <View style={styles.container}>
 
         {/*cells*/}
-        <ScrollView>
+        <ScrollView style={{marginTop: 44}}>
+          {/*我的订单*/}
+          <View style={{marginTop:10}}>
+            <CommonCell icon={require('../../images/collect.png')} title="我的订单" subtitle="查看全部订单" />
+            <MineOrderCell />
+          </View>
+
+          {/*其他cells*/}
           <View style={{marginTop:10}}>
             <CommonCell icon={require('../../images/pay.png')} title="我的钱包" subtitle={"账户余额:￥24.5"} />
             <CommonCell icon={require('../../images/card.png')} title="抵用券" subtitle={"3张"} />
