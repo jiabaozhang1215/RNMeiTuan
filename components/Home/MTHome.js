@@ -31,6 +31,7 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
 	container: {
+    flex: 1,
 		backgroundColor: '#e8e8e8'
 	},
 });
