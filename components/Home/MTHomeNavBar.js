@@ -1,7 +1,23 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, TextInput, Dimensions, TouchableOpacity, Alert, ScrollView} from 'react-native';
+import React, {
+  Component
+} from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Dimensions,
+  TouchableOpacity,
+  Alert,
+  ScrollView
+} from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const {
+  width,
+  height
+} = Dimensions.get('window');
 const IsIphoneX = (Platform.OS == 'ios' && width == 375 && height == 812);
 // NavBar
 const NavItemHeight = 30;
@@ -114,4 +130,3 @@ const styles = StyleSheet.create({
     height: 25,
   },
 });
-
