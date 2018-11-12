@@ -16,7 +16,7 @@ export default class HomeSalesView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.rendrTopView()}
+        {this.renderTopView()}
         <View style={styles.bottomStyle}>
           {this.renderBottomView()}
         </View>
@@ -24,15 +24,15 @@ export default class HomeSalesView extends Component {
     );
   }
 
-  rendrTopView() {
+  renderTopView() {
     return (
       <View style={styles.topStyle}>
-        <View style={{marginLeft:15}}>
-          <Text style={{color:'orange',fontSize:20}}>最高立减30元</Text>
-          <Text style={{color:'gray',fontSize:13, marginTop:10}}>新用户专享</Text>
+        <View>
+          <Text style={{fontSize:20,color:'orange',marginLeft:15}}>最高立减30元</Text>
+          <Text style={{fontSize:13,color:'gray',marginLeft:17,marginTop:8}}>新用户专享</Text>
         </View>
         <Image
-          style={{width:145, height:65,marginRight:15}}
+          style={{width:150,height:60}}
           source={require('../../images/nsj.png')}
         />
       </View>
