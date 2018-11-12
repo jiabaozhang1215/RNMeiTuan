@@ -39,9 +39,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     height: 60-0.5,
+    width: width/2-0.5,
     flexDirection:'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: 1,
   },
   leftView: {
 
@@ -59,6 +61,6 @@ const styles = StyleSheet.create({
   rightIcon: {
     width: 59,
     height: 42,
-    marginRight: 5
+    marginRight: 15
   }
 });
