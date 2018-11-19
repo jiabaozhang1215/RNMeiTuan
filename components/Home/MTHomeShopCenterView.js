@@ -18,6 +18,16 @@ const { width, height } = Dimensions.get('window');
 const Home_Data_D5 = require('../../LocalData/XMG_Home_D5.json').data;
 
 export default class MTHomeShopCenter extends Component {
+
+  constructor(props){
+    super(props);
+    this.clickShopCenter = this.clickShopCenter.bind(this);
+  }
+
+  static defaultProps = {
+    shopCenterCallBack: null,
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -47,25 +57,37 @@ export default class MTHomeShopCenter extends Component {
           imgUrl={itemData.img}
           showtext={itemData.showtext.text}
           detailurl={itemData.detailurl}
+          itemCallBack={(url, name) => this.clickShopCenter(url, name)}
         />
       );
     }
     return items;
   }
+
+  clickShopCenter(url, name) {
+    if (this.props.shopCenterCallBack == null) return;
+    this.props.shopCenterCallBack(url, name);
+  }
 }
 
 class ShopCenterItem extends Component {
+
+  constructor(props) {
+    super(props);
+    this.clickItem = this.clickItem.bind(this);
+  }
 
   static defaultProps = {
     title: '',
     imgUrl: '',
     showtext: '',
     detailurl: '',
+    itemCallBack: null,
   }
 
   render() {
     return (
-      <TouchableOpacity onPress={() => this.clickShopCenterItem(this.props.detailurl)}>
+      <TouchableOpacity onPress={() => this.clickItem(this.props.detailurl, this.props.title)}>
         <View style={{width:(width/3),height:(width/3), justifyContent:'space-between',alignItems:'center'}}>
         <Image
           style={{width:(width/3-30), height:(width/3-30)*0.8, marginTop:5, borderRadius:5}}
@@ -80,8 +102,9 @@ class ShopCenterItem extends Component {
     );
   }
 
-  clickShopCenterItem(url) {
-    alert(url);
+  clickItem(url, name) {
+    if (this.props.itemCallBack == null) return;
+    this.props.itemCallBack(url, name);
   }
 
 }

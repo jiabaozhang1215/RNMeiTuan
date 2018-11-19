@@ -16,14 +16,19 @@ import HomeIconsView from './MTHomeIconsView';
 import HomeSpecialView from './MTHomeSpecialView';
 import HomeSalesView from './MTHomeSalesView';
 import HomeShopCenterView from './MTHomeShopCenterView';
+import ShopCenterDetail from './MTShopCenterDetailView';
 import Api from '../../Api';
 
 const HomeSpecialData = Api.HomeSpecialData;
 const {width, height} = Dimensions.get('window');
 const IsIphoneX = (Platform.OS == 'ios' && width == 375 && height == 812);
 
-
 export default class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.pushToShopCenterDetail = this.pushToShopCenterDetail.bind(this);
+  }
 
   render() {
     return (
@@ -44,11 +49,20 @@ export default class Home extends Component {
           <HomeSalesView />
           {/*购物中心*/}
           <HomeShopCenterView
+            shopCenterCallBack={(url, name) => this.pushToShopCenterDetail(url, name)}
           />
         </ScrollView>
       </View>
     );
   }
+
+  pushToShopCenterDetail(url, name) {
+    this.props.navigator.push({
+      component: ShopCenterDetail,
+      passProps: {'pageUrl': url, 'headerTitle': name}
+    });
+  }
+
 }
 
 
