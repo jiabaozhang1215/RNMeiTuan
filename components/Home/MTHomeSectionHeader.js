@@ -43,7 +43,7 @@ export default class HomeSectionHeader extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    height: 35,
+    height: 40,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

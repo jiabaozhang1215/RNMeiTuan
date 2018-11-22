@@ -17,6 +17,7 @@ import HomeSpecialView from './MTHomeSpecialView';
 import HomeSalesView from './MTHomeSalesView';
 import HomeShopCenterView from './MTHomeShopCenterView';
 import ShopCenterDetail from './MTShopCenterDetailView';
+import GuessYouLikeView from './MTHomeGuessYouLikeView';
 import Api from '../../Api';
 
 const HomeSpecialData = Api.HomeSpecialData;
@@ -51,6 +52,8 @@ export default class Home extends Component {
           <HomeShopCenterView
             shopCenterCallBack={(url, name) => this.pushToShopCenterDetail(url, name)}
           />
+          {/*猜你喜欢*/}
+          <GuessYouLikeView />
         </ScrollView>
       </View>
     );
@@ -59,8 +62,12 @@ export default class Home extends Component {
   pushToShopCenterDetail(url, name) {
     this.props.navigator.push({
       component: ShopCenterDetail,
-      passProps: {'pageUrl': url, 'headerTitle': name}
+      params: {pageUrl: this.dealWithUrl(url), pageTitle: name}
     });
+  }
+
+  dealWithUrl(url) {
+    return url.replace('imeituan://www.meituan.com/web/?url=', '');
   }
 
 }
